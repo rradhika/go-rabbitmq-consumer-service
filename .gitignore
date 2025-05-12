@@ -1,0 +1,7 @@
+# .gitignore
+*.exe
+*.out
+tmp/
+.air.toml
+.env
+go.sum
