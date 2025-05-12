@@ -12,6 +12,7 @@ import (
 func main() {
 	utils.LoadEnv()
 	utils.InitRabbitMQ()
+	utils.ConsumeQueue()
 	conf := config.GetConfig()
 
 	app := fiber.New()

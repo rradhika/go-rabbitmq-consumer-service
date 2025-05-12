@@ -31,3 +31,18 @@ func InitRabbitMQ() {
 	Channel = ch
 	Queue = q
 }
+
+func ConsumeQueue() {
+	msgs, err := Channel.Consume(
+		Queue.Name, "", true, false, false, false, nil,
+	)
+	if err != nil {
+		log.Fatalf("Failed to register consumer: %s", err)
+	}
+
+	go func() {
+		for msg := range msgs {
+			log.Printf("🔥 Received message: %s", string(msg.Body))
+		}
+	}()
+}
