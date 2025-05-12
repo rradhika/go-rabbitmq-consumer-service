@@ -20,6 +20,6 @@ A modular boilerplate built with [Fiber](https://gofiber.io) and integrated with
 ### Clone and Setup
 
 ```bash
-git clone https://github.com/yourusername/gofiber-rabbitmq.git
-cd gofiber-rabbitmq
+git clone https://github.com/rradhika/go-rabbitmq-producer
+cd go-rabbitmq-producer
 go mod tidy
