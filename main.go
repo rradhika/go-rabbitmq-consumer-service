@@ -4,13 +4,14 @@ import (
 	"fmt"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/rradhika/go-rabbitmq-producer/config"
-	"github.com/rradhika/go-rabbitmq-producer/routes"
-	"github.com/rradhika/go-rabbitmq-producer/utils"
+	"github.com/rradhika/go-rabbitmq-consumer-service/config"
+	"github.com/rradhika/go-rabbitmq-consumer-service/routes"
+	"github.com/rradhika/go-rabbitmq-consumer-service/utils"
 )
 
 func main() {
 	utils.LoadEnv()
+	utils.InitDB()
 	utils.InitRabbitMQ()
 	utils.ConsumeQueue()
 	conf := config.GetConfig()
